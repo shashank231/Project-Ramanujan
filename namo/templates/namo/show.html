@@ -1,0 +1,25 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;">{{namn}}</h2>
+<br>
+
+<h4>Que : {{qu.que}}</h4>
+<br>
+
+<div class="container mt-3 ">
+<form action="{% url 'check' qu.id %}", method="POST">
+    {% csrf_token %}
+  <label for="quantity">
+      <h5>Answer :</h5>
+  </label>
+  <input type="number" id="quantity" name="quantity">
+  <input type="submit" value="Submit">
+</form>
+<br>
+</div>
+
+
+{% endblock %}

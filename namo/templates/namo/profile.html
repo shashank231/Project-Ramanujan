@@ -1,0 +1,24 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+<br>
+<h3 style="border-bottom: 3px solid red;
+  background-color: khaki;">My profile</h3>
+<br>
+<div class="media">
+  <img src="{{profile.pic.url}}" class="mr-3" alt="...">  <!--VI - profile.pic.url, context me profile hai usse pic access ki hai-->
+  <div class="media-body">
+    <h3 class="mt-0">Username : {{user.username}}</h3>
+    <h4>
+        Name - {{profile.name}}  <br>  <!--ye profile ke model se lia hai-->
+        Email - {{user.email}}    <br>  <!--ye login hue user se le rahe hai -->
+        Phone - {{profile.phone}} <br>  <!--ye profile ke model se lia hai-->
+        Note - {{profile.note}}   <br>  <!--ye profile ke model se lia hai-->
+        Score - {{profile.score}} <br>
+    </h4>
+      <br>
+      <a class="btn btn-primary" href="{% url 'update' %}" role="button">update</a>
+  </div>
+</div>
+
+
+{% endblock %}

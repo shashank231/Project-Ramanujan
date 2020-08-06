@@ -1,0 +1,36 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-4">
+    <div class="alert alert-warning mt-4">
+        <h3 style="border-bottom: 3px solid red;
+  background-color: khaki;">Leaderboard</h3>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Username</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">View Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in leaders %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.anna}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.score}}</td>
+                    <td><a class="btn btn-primary" href="#">Profile</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+<center><a class="btn btn-warning" href="{% url 'index' %}">Home</a></center>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Project Ramanujan</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'ques' %}">Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'leader' %}">Leaderboard</a>
+      </li>
+      {%  if user.is_authenticated %}  <!--it will only come on navbar when user is authenticated-->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">Contact us</a>
+      </li>
+    </ul>
+  </div>
+
+    {%  if user.is_authenticated %}  <!--it will only come on navbar when user is authenticated-->
+     <span class="hello-msg" style="color:aqua;">
+       <h5>Hello, {{request.user}}</h5>
+     </span>
+    <p style="padding: 15px;"></p>
+     <span ><a  class="btn btn-danger" href="{% url 'logout' %}">Logout</a></span>
+  {% endif %}
+
+</nav>

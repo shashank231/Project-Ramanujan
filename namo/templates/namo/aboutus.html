@@ -1,0 +1,30 @@
+{%  extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;"> Contact us. </h2>
+<br>
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>Hi!</strong> Feel free to contact us for any query.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<
+<div class="media">
+  <img src="{% static 'images/insta.jpg' %}" class="mr-3" alt="...">
+  <div class="media-body">
+    <h5 class="mt-0">Instagram</h5>
+     Insta id - @shashankkaushik
+    <br> Do follow us on insta for updates
+    <br> Pls Go visit our page
+    <br>
+    <a class="btn btn-danger" href="#">Go to page</a>
+  </div>
+</div>
+
+
+{% endblock %}

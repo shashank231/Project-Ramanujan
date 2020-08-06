@@ -1,0 +1,83 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;">Questions</h2>
+<br>
+<div class="container mx-3">
+<div class="row" style="border-style: solid; background-color: wheat;">
+    <h3>Your Score : {{score}}</h3>
+    <p style="padding: 15px;"></p>
+     <h3>Your Rank : {{rank}}</h3>
+</div>
+</div>
+
+<br>
+<div>
+    <table class="table table-dark">
+    <thread>
+    <tr>
+      <th scope="col">sr no.</th>
+      <th scope="col">Question</th>
+      <th scope="col">Go to que</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for i in qun %}
+    <tr>
+      <th scope="row">{{i.qnum}}</th>
+      <td>{{i.qnam}}</td>
+
+      {% if i.id in lst %}
+        <td><a class="btn btn-success" href="{% url 'show' i.id %}" role="button">Done</a></td>
+      {% else %}
+        <td><a class="btn btn-primary" href="{% url 'show' i.id %}" role="button">Try</a></td>
+      {% endif %}
+
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+
+
+</div>
+
+{% if qun.has_other_pages %}
+    <div class="row mt-4 ">
+        <div class="col-lg-6">
+            {% if qun.has_previous %}
+                <a class="btn btn-primary" href="?page={{qun.previous_page_number}}">Previous Page</a>
+            {% endif %}
+            {% if qun.has_next %}
+                <a class="btn btn-primary" href="?page={{qun.next_page_number}}" >Next Page</a>
+            {% else %}
+                <a class="btn btn-dark" href="{% url 'index' %}">Go to home page</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+
+<div class="container mt-4" >
+    <div class="card col-lg-6">
+        <div class="card-body">
+            <h5>Jump To Page</h5>
+            {% if qun.has_other_pages %}
+            <div class="pagination">
+                {% for i in qun.paginator.page_range %}
+                {% if qun.number == i %}
+                    <a class="active btn btn-primary"><span>{{i}} <span class="sr-only">(current)</span></span></a>
+                {% else %}
+                    <a class="btn btn-light" href="?page={{i}}">{{i}}</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

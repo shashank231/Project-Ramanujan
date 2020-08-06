@@ -1,0 +1,19 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+<h2>{{namn}}</h2>
+<br>
+
+{% ifequal flag 1 %}
+    <h2>Correct, congratulations, Try next question</h2>
+    <img src="{% static 'images/corct.jpg' %}" class="rounded mx-auto d-block" alt="...">
+{% else %}
+    <h2>Wrong, Try again you are doing something wrong.</h2>
+    <img src="{% static 'images/rong.jpg' %}" class="rounded mx-auto d-block" alt="...">
+{% endifequal %}
+
+
+<a class="btn btn-primary" href="{% url 'show' id2 %}" role="button">Go to next question</a>
+
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{%  extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated == False %}
+<br>
+<div class="container ml-4" >
+  <div class="row">
+    <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a>
+    <p style="padding: 20px;"></p>
+    <a class="btn btn-success btn-lg" href="{% url 'login' %}" role="button">Login</a>
+  </div>
+</div>
+<div>
+{% endif %}
+
+<br>
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+  <strong>Welcome to Project Ramanujan.</strong> A place to enjoy maths and coding
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<div class="row">
+  <div class="card" style="width: 20rem; height: 28rem">
+  <img src="{% static 'images/ramn3.jpg' %}" class="card-img-top" alt="..." height="250" width="250">
+  <div class="card-body">
+    <h5 class="card-title">About Srinivasan Ramanujan</h5>
+    <p class="card-text">Here you can know a lot about the life and work of  Mathematicians Srinivasan Ramanujan</p>
+    <a href="#" class="btn btn-primary">Read</a>
+  </div>
+</div>
+  <div class="card" style="width: 20rem; height: 28rem">
+  <img src="{% static 'images/ramn4.jpg' %}" class="card-img-top" alt="..." height="250" width="250">
+  <div class="card-body">
+    <h5 class="card-title">The man who knew infinity</h5>
+    <p class="card-text">An amazing and award winning movie on  Mathematicians Srinivasan Ramanujan</p>
+    <a href="#" class="btn btn-primary">Download link</a>
+  </div>
+</div>
+  <div class="card" style="width: 20rem; height: 28rem">
+  <img src="{% static 'images/ramn5.jpg' %}" class="card-img-top" alt="..." height="250" width="250">
+  <div class="card-body">
+    <h5 class="card-title">Biography</h5>
+    <p class="card-text">Ramanujan made contributions to continued fractions and the string theory.</p>
+    <a href="#" class="btn btn-primary">Read</a>
+  </div>
+</div>
+  <div class="card" style="width: 20rem; height: 28rem">
+  <img src="{% static 'images/ramn6.jpg' %}" class="card-img-top" alt="..." height="250" width="250">
+  <div class="card-body">
+    <h5 class="card-title">String Theory</h5>
+    <p class="card-text">Ramanujan made contributions to the analytical theory, elliptic functions and infinite series.</p>
+    <a href="#" class="btn btn-primary">Read</a>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="media">
+  <div class="media-body">
+    <h3 style="border-bottom: 3px solid red;
+  background-color: khaki;" class="mt-0 mb-1">Ramanujan</h3>
+    <p style="font-style: italic">
+    An intuitive mathematical genius, Ramanujan's discoveries have influenced several areas of mathematics, but he is
+    probably most famous for his contributions to number theory and infinite series, among them fascinating formulas
+    that can be used to calculate digits of pi in unusual ways.
+    Ramanujan replied that 1729 was not a boring number at all: it was a very interesting one. He explained that it was
+    the smallest number that could be expressed by the sum of two cubes in two different ways. This story is very famous
+    among mathematicians. 1729 is sometimes called the “Hardy-Ramanujan number".
+    </p>
+  </div>
+  <img src="{% static 'images/ramn1.jpg' %}" class="ml-3" alt="...">
+</div>
+<br>
+<h4 style="border-bottom: 3px solid red;
+  background-color: khaki;">What is Project Ramanujan?</h4>
+<p style="font-style: italic">
+Project Ramanujan is a series of challenging mathematical/computer programming problems that will require more than just
+mathematical insights to solve. Although mathematics will help you arrive at elegant and efficient methods, the use of
+a computer and programming skills will be required to solve most problems.
+
+The motivation for starting Project Euler, and its continuation, is to provide a platform for the inquiring mind to
+delve into unfamiliar areas and learn new concepts in a fun and recreational context.
+</p>
+<br>
+<h4 style="border-bottom: 3px solid red;
+  background-color: khaki;">Who are the problems aimed at?</h4>
+<p style="font-style: italic">
+The intended audience include students for whom the basic curriculum is not feeding their hunger to learn, adults whose
+background was not primarily mathematics but had an interest in things mathematical, and professionals who want to keep
+their problem solving and mathematics on the cutting edge.
+</p>
+
+
+{% endblock %}
