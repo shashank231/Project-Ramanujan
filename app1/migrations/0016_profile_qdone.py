@@ -7,7 +7,7 @@ import django_mysql.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0015_auto_20200713_1814'),
+        ('app1', '0015_auto_20200713_1814'),
     ]
 
     operations = [

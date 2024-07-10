@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0010_remove_question_qnumb'),
+        ('app1', '0010_remove_question_qnumb'),
     ]
 
     operations = [
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='profile',
             name='qdon',
-            field=models.ManyToManyField(null=True, to='namo.Question'),
+            field=models.ManyToManyField(null=True, to='app1.Question'),
         ),
     ]

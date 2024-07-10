@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0008_profile_qdon'),
+        ('app1', '0008_profile_qdon'),
     ]
 
     operations = [

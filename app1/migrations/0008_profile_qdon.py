@@ -7,13 +7,13 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0007_question_done'),
+        ('app1', '0007_question_done'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='profile',
             name='qdon',
-            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to='namo.Question'),
+            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to='app1.Question'),
         ),
     ]

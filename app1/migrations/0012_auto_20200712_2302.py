@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0011_auto_20200712_2259'),
+        ('app1', '0011_auto_20200712_2259'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='profile',
             name='qdon',
-            field=models.ManyToManyField(blank=True, null=True, to='namo.Question'),
+            field=models.ManyToManyField(blank=True, null=True, to='app1.Question'),
         ),
     ]

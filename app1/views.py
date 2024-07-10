@@ -22,7 +22,7 @@ def registerPage(request):
                 return redirect('login')   # jaise hi register ho jaega user login page par chal jaega
 
         context = {'form': form}
-        return render(request, 'namo/register.html', context)
+        return render(request, 'app1/register.html', context)
 
 def loginPage(request):
     if request.user.is_authenticated:
@@ -40,23 +40,23 @@ def loginPage(request):
                 messages.info(request, 'Username OR password is incorrect')
 
         context = {}
-        return render(request, 'namo/login.html', context)
+        return render(request, 'app1/login.html', context)
 
 def logoutUser(request):
 	logout(request)     # is logout ko humne upar import kia hai
 	return redirect('index')
 
 def index(request):
-    return render(request, 'namo/index.html')
+    return render(request, 'app1/index.html')
 
 def aboutus(request):
-    return render(request, 'namo/aboutus.html')
+    return render(request, 'app1/aboutus.html')
 
 @login_required(login_url='login')
 def leaderboard(request):
     leaders = Profile.objects.all().order_by('-score')   # VI - we here use .order_by to order them according to score
     context = {'leaders': leaders}
-    return render(request, 'namo/leaderboard.html', context)
+    return render(request, 'app1/leaderboard.html', context)
 
 @login_required(login_url='login')
 def ques(request):
@@ -79,7 +79,7 @@ def ques(request):
         else:
             rank = rank + 1
     context = {'qun': page_obj, 'lst': lst, 'score': score, 'rank': rank}
-    return render(request, 'namo/ques.html', context)
+    return render(request, 'app1/ques.html', context)
 
 @login_required(login_url='login')
 def show(request, pk):
@@ -87,7 +87,7 @@ def show(request, pk):
     namn = qunn.qnam
     qu = Question.objects.get(id=pk)
     context = {'namn': namn, 'qu': qu}
-    return render(request, 'namo/show.html', context)
+    return render(request, 'app1/show.html', context)
 
 
 @login_required(login_url='login')
@@ -111,7 +111,7 @@ def check(request, pk):
     else:
         flag = 0
     context = {'flag': flag, 'id2': id2, 'id3': id3}
-    return render(request, 'namo/check.html', context)
+    return render(request, 'app1/check.html', context)
 
 @login_required(login_url='login')
 def profile(request):
@@ -119,7 +119,7 @@ def profile(request):
     print(request.user)                                # anna profile model me user hai to use login user set kar dia.
     print(profile.name)
     context = {'profile': profile}
-    return render(request, 'namo/profile.html', context)
+    return render(request, 'app1/profile.html', context)
 
 @login_required(login_url='login')
 def update(request):
@@ -131,7 +131,7 @@ def update(request):
             form.save()
             return redirect('profile')
     context = {'form': form}
-    return render(request, 'namo/update.html', context)
+    return render(request, 'app1/update.html', context)
 
 
 

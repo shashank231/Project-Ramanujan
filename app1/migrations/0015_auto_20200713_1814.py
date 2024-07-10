@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('namo', '0014_profile_score'),
+        ('app1', '0014_profile_score'),
     ]
 
     operations = [
